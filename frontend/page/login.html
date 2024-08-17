@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>User Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-transparent shadow-md rounded-lg p-8 max-w-lg w-full bg-lime-600">
+        <h2 class="text-3xl font-semibold text-gray-800 mb-6">User Login</h2>
+        <form id="loginForm" class="space-y-6 bg-transparent">
+            <div>
+                <label class="block text-gray-700" for="username">Username</label>
+                <input type="text" id="username" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" required>
+                <span id="usernameError" class="error-message"></span>
+            </div>
+            <div>
+                <label class="block text-gray-700" for="password">Password</label>
+                <input type="password" id="password" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" required>
+                <span id="passwordError" class="error-message"></span>
+            </div>
+            <button type="submit" id="loginBtn" class="bg-blue-600 text-white w-full px-4 py-2 rounded-lg">Login</button>
+        </form>
+        <p class="text-gray-600 mt-4">Don't have an account? <a href="sign-up.html" class="text-blue-600 hover:underline">Sign up here</a>.</p>
+    </div>
+
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+
+    <script src="login.js"></script>
 </body>
 </html>
