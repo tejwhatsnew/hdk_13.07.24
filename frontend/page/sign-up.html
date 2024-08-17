@@ -1,0 +1,74 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <style>
+        body {
+            background-image: url(''); /* add a background image */
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
+            background-color: #d9f99d; 
+        }
+    </style> -->
+</head>
+<body class="">
+    <!-- <header class="bg-blue-600 p-4 text-white">
+        <nav class="container mx-auto flex justify-between">
+            <div class="text-lg font-bold">User Registration</div>
+            <div>
+                <a href="index.html" class="hover:underline">Home</a>
+            </div>
+        </nav>
+    </header> -->
+
+    <main class="container mx-auto p-8 flex justify-start ">
+        <div class="w-3/4 xl:w-3/4 lg:w-3/4 md:w-3/4 sm:w-full bg-transparent bg-lime-600 shadow-lg p-8 shadow rounded-lg">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Create an Account</h2>
+            <form id="registrationForm" class="bg-transparent p-8">
+                <div class="mb-4">
+                    <label class="block text-gray-700" for="username">Username</label>
+                    <input type="text" id="username" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700" for="email">Email</label>
+                    <input type="email" id="email" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700" for="password">Password</label>
+                    <input type="password" id="password" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700" for="address">Address</label>
+                    <input type="text" id="address" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700" for="phone_number">Phone Number</label>
+                    <input type="tel" id="phone_number" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700" for="otp">OTP</label>
+                    <input type="text" id="otp" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter OTP sent to your email">
+                </div>
+                <button type="button" id="sendOtpBtn" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Send OTP</button>
+                <button type="submit" id="registerBtn" class="bg-green-600 text-white px-4 py-2 rounded-lg mt-4">Register</button>
+            </form>
+        </div>
+        <div class="w-1/4 xl:w-1/4 lg:w-1/4 md:w-1/4 sm:w-full">
+            <img src="v.avif" alt="Vertical Image" class="w-full h-full object-cover rounded-lg">
+        </div>
+    </main>
+
+    <!-- <footer class="bg-blue-600 text-white p-4 text-center">
+        &copy; 2024 User Registration. All rights reserved.
+    </footer> -->
+
+    <script src="sign-up.js"></script>
+</body>
+</html>
