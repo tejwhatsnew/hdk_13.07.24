@@ -1,0 +1,43 @@
+@import url("../font/Archivo-VariableFont_wdth\,wght.ttf");
+@import url("../font/Magilio.ttf");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url("../font/Archivo-VariableFont_wdth\,wght.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Magilio';
+    src: url("../font/MagilioRegular.ttf") format('truetype');
+}
+
+:root {
+    --primary-color: #87A922;
+    --secondary-color: #F7F6BB;
+    --background-dark-color: #114232;
+    --border-color: #114232;
+    --background-light-color: #F7F6BB;
+    --white-color: #FFF;
+    --font-light-color: #a4acc4;
+    --font-dark-color: #313131;
+    --font-dark-color-2: #151515;
+    --sidebar-dark-color: #191D2B;
+    --scrollbar-bg-color: #383838;
+    --scrollbar-thump-color: #6b6b6b;
+    --scrollbar-track-color: #383838;
+}
+
+h1, h2 {
+    font-family: 'Magilio';
+}
+
+h3, h4, h5, h6, p, a, span, li {
+    font-family: 'Archivo', sans-serif;
+}
+
