@@ -1,4 +1,4 @@
 package com.hsbc.ecommerce.service;
 
-public interface UserService {
+public class CustomerServiceTest {
 }
