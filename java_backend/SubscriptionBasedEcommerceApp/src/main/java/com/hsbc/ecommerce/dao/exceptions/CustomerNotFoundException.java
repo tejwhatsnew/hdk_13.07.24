@@ -1,4 +1,4 @@
 package com.hsbc.ecommerce.dao.exceptions;
 
-public class UserNotFoundException {
+public class CustomerNotFoundException {
 }

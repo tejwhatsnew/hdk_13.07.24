@@ -2,7 +2,7 @@ package com.hsbc.ecommerce.model;
 
 import java.util.List;
 
-public class User {
+public class Customer {
     private int id;
     private String name;
     private String email;
@@ -10,7 +10,7 @@ public class User {
     private List<Subscription> subscriptions;
 
     // Constructor
-    public User(int id, String name, String email, double walletBalance, List<Subscription> subscriptions) {
+    public Customer(int id, String name, String email, double walletBalance, List<Subscription> subscriptions) {
         this.id = id;
         this.name = name;
         this.email = email;
