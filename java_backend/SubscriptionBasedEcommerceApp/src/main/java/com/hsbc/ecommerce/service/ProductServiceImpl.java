@@ -7,7 +7,6 @@ import com.hsbc.ecommerce.model.Product;
 import java.util.List;
 
 public class ProductServiceImpl implements ProductService {
-
     private ProductDAO productDAO;
 
     public ProductServiceImpl(ProductDAO productDAO) {
@@ -16,46 +15,38 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void addProduct(Product product) {
-        try {
-            productDAO.addProduct(product);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to add product: " + product.getName(), e);
+        productDAO.addProduct(product);
+    }
+
+    @Override
+    public Product viewProduct(int productId) {
+        Product product = productDAO.getProductById(productId);
+        if (product == null) {
+            throw new ProductNotFoundException("Product with ID " + productId + " not found.");
         }
+        return product;
+    }
+
+    @Override
+    public List<Product> listAllProducts() {
+        return productDAO.getAllProducts();
     }
 
     @Override
     public void updateProduct(Product product) {
         try {
             productDAO.updateProduct(product);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to update product: " + product.getName(), e);
+        } catch (ProductNotFoundException e) {
+            throw new ProductNotFoundException("Product with ID " + product.getProductId() + " not found for update.");
         }
     }
 
     @Override
-    public void deleteProduct(int productId) {
+    public void removeProduct(int productId) {
         try {
             productDAO.deleteProduct(productId);
-        } catch (Exception e) {
-            throw new ProductNotFoundException("Failed to delete product with ID: " + productId);
+        } catch (ProductNotFoundException e) {
+            throw new ProductNotFoundException("Product with ID " + productId + " not found for deletion.");
         }
-    }
-
-    @Override
-    public List<Product> listProducts() {
-        List<Product> products = productDAO.getAllProducts();
-        if (products == null || products.isEmpty()) {
-            throw new ProductNotFoundException("No products found.");
-        }
-        return products;
-    }
-
-    @Override
-    public List<Product> listProductsByCategory(String category) {
-        List<Product> products = productDAO.getProductsByCategory(category);
-        if (products == null || products.isEmpty()) {
-            throw new ProductNotFoundException("No products found in category: " + category);
-        }
-        return products;
     }
 }

@@ -5,7 +5,9 @@ import com.hsbc.ecommerce.model.Order;
 import java.util.List;
 
 public interface OrderService {
-    List<Order> getOrderHistory();
-    List<Order> getOrdersByUserId(int userId);
-    Object getOrderDashboard();  // You may use a more specific return type for analytics and statistics.
+    void placeOrder(Order order);
+    Order viewOrder(int orderId);
+    List<Order> listAllOrders();
+    void updateOrder(Order order);
+    void cancelOrder(int orderId);
 }

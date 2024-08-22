@@ -1,40 +1,70 @@
 package com.hsbc.ecommerce.model;
 
 import java.util.Date;
-import java.util.List;
 
 public class Order {
     private int id;
-    private int userId;
+    private int customerSubscriptionId;
+    private int productId;  // New attribute
     private Date orderDate;
-    private List<Product> products;
-    private double totalAmount;
+    private Date deliveryDate;
+    private String status;
+    private double totalAmount; // Assuming this is calculated elsewhere
 
-    // Constructor
-    public Order(int id, int userId, Date orderDate, List<Product> products, double totalAmount) {
-        this.id = id;
-        this.userId = userId;
-        this.orderDate = orderDate;
-        this.products = products;
-        this.totalAmount = totalAmount;
+    // Getters and Setters for all attributes including productId
+    public int getOrderId() {
+        return id;
     }
 
-    // Getters and Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public void setOrderId(int id) {
+        this.id = id;
+    }
 
-    public int getUserId() { return userId; }
-    public void setUserId(int userId) { this.userId = userId; }
+    public int getCustomerSubscriptionId() {
+        return customerSubscriptionId;
+    }
 
-    public Date getOrderDate() { return orderDate; }
-    public void setOrderDate(Date orderDate) { this.orderDate = orderDate; }
+    public void setCustomerSubscriptionId(int customerSubscriptionId) {
+        this.customerSubscriptionId = customerSubscriptionId;
+    }
 
-    public List<Product> getProducts() { return products; }
-    public void setProducts(List<Product> products) { this.products = products; }
+    public int getProductId() {
+        return productId;
+    }
 
-    public double getTotalAmount() { return totalAmount; }
-    public void setTotalAmount(double totalAmount) { this.totalAmount = totalAmount; }
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
 
-    // Additional methods
-    public int getTotalItems() { return products.size(); }
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public Date getDeliveryDate() {
+        return deliveryDate;
+    }
+
+    public void setDeliveryDate(Date deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
 }

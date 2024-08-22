@@ -1,42 +1,103 @@
-package com.hsbc.ecommerce.model;
+package     com.hsbc.ecommerce.model;
+
+import java.util.Date;
 
 public class Product {
-    private int id;
+    private int productId;
     private String name;
     private String description;
-    private double price;
     private String category;
-    private int stockQuantity;
+    private double price;
+    private String imageUrl;
+    private boolean isActive;
+    private int stock; // New attribute for stock
+    private Date createdAt;
 
-    // Constructor
-    public Product(int id, String name, String description, double price, String category, int stockQuantity) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.category = category;
-        this.stockQuantity = stockQuantity;
+    // Getters and Setters for all attributes, including the new stock attribute
+    public int getProductId() {
+        return productId;
     }
 
-    // Getters and Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public String getName() {
+        return name;
+    }
 
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
+    public String getDescription() {
+        return description;
+    }
 
-    public String getCategory() { return category; }
-    public void setCategory(String category) { this.category = category; }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-    public int getStockQuantity() { return stockQuantity; }
-    public void setStockQuantity(int stockQuantity) { this.stockQuantity = stockQuantity; }
+    public String getCategory() {
+        return category;
+    }
 
-    // Additional methods
-    public boolean isInStock() { return stockQuantity > 0; }
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean isActive) {
+        this.isActive = isActive;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId=" + productId +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", category='" + category + '\'' +
+                ", price=" + price +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", isActive=" + isActive +
+                ", stock=" + stock +
+                ", createdAt=" + createdAt +
+                '}';
+    }
 }

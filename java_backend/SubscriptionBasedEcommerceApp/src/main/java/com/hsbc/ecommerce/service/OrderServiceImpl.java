@@ -7,7 +7,6 @@ import com.hsbc.ecommerce.model.Order;
 import java.util.List;
 
 public class OrderServiceImpl implements OrderService {
-
     private OrderDAO orderDAO;
 
     public OrderServiceImpl(OrderDAO orderDAO) {
@@ -15,29 +14,39 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> getOrderHistory() {
-        List<Order> orders = orderDAO.getOrderHistory();
-        if (orders == null || orders.isEmpty()) {
-            throw new OrderNotFoundException("No order history found.");
-        }
-        return orders;
+    public void placeOrder(Order order) {
+        orderDAO.addOrder(order);
     }
 
     @Override
-    public List<Order> getOrdersByUserId(int userId) {
-        List<Order> orders = orderDAO.getOrdersByUserId(userId);
-        if (orders == null || orders.isEmpty()) {
-            throw new OrderNotFoundException("No orders found for user ID: " + userId);
+    public Order viewOrder(int orderId) {
+        Order order = orderDAO.getOrderById(orderId);
+        if (order == null) {
+            throw new OrderNotFoundException("Order with ID " + orderId + " not found.");
         }
-        return orders;
+        return order;
     }
 
     @Override
-    public Object getOrderDashboard() {
-        Object dashboardData = orderDAO.getOrderDashboard();
-        if (dashboardData == null) {
-            throw new RuntimeException("Failed to retrieve order dashboard data.");
+    public List<Order> listAllOrders() {
+        return orderDAO.getAllOrders();
+    }
+
+    @Override
+    public void updateOrder(Order order) {
+        try {
+            orderDAO.updateOrder(order);
+        } catch (OrderNotFoundException e) {
+            throw new OrderNotFoundException("Order with ID " + order.getOrderId() + " not found for update.");
         }
-        return dashboardData;
+    }
+
+    @Override
+    public void cancelOrder(int orderId) {
+        try {
+            orderDAO.deleteOrder(orderId);
+        } catch (OrderNotFoundException e) {
+            throw new OrderNotFoundException("Order with ID " + orderId + " not found for cancellation.");
+        }
     }
 }
