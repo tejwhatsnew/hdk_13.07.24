@@ -15,4 +15,6 @@ public interface CustomerService {
     void topUpWallet(int customerId, double amount) throws CustomerNotFoundException;
     void deductFromWallet(int customerId, double amount) throws CustomerNotFoundException;
     List<Subscription> getSubscriptionsByCustomerId(int customerId) throws CustomerNotFoundException;
+
+    boolean isValidCustomer(int customerId);
 }

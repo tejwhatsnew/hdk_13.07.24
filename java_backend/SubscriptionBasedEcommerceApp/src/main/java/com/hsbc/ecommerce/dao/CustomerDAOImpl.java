@@ -10,9 +10,9 @@ import java.util.List;
 
 
 public class CustomerDAOImpl implements CustomerDAO {
-    private static final String URL = "jdbc:mysql://localhost:3306/ecommerce";
+    private static final String URL = "jdbc:mysql://localhost:3306/ecommercedb";
     private static final String USER = "root";
-    private static final String PASSWORD = "1234";
+    private static final String PASSWORD = "root";
 
     private Connection connection;
 

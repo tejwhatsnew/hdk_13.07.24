@@ -3,25 +3,15 @@ package com.hsbc.ecommerce.dao;
 import com.hsbc.ecommerce.dao.exceptions.CustomerNotFoundException;
 import com.hsbc.ecommerce.dao.exceptions.SubscriptionNotFoundException;
 import com.hsbc.ecommerce.model.Subscription;
+import com.hsbc.ecommerce.util.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SubscriptionDAOImpl implements SubscriptionDAO {
-    private static final String URL = "jdbc:mysql://localhost:3306/ecommerce";
-    private static final String USER = "root";
-    private static final String PASSWORD = "1234";
 
-    private Connection connection;
-
-    {
-        try {
-            connection = DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    private Connection connection = DatabaseConnection.getConnection();
 
     @Override
     public void addSubscription(Subscription subscription) {
@@ -88,6 +78,8 @@ public class SubscriptionDAOImpl implements SubscriptionDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException(e); // Wrap SQL exceptions in a runtime exception
+        } catch (CustomerNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         // Fetch subscriptions if the customer exists

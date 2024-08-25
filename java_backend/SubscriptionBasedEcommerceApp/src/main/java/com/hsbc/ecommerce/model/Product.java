@@ -1,5 +1,6 @@
 package     com.hsbc.ecommerce.model;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Product {
@@ -12,6 +13,30 @@ public class Product {
     private boolean isActive;
     private int stock; // New attribute for stock
     private Date createdAt;
+
+    public Product() {
+    }
+
+    public Product(String name, String description, String category, double price, String imageUrl, boolean isActive, int stockQuantity) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.price = price;
+        this.isActive = isActive;
+        this.imageUrl = imageUrl;
+        this.stock = stockQuantity;
+    }
+
+    public Product(int id, String name, String description, String category, double price, String imageUrl, boolean isActive, int stockQuantity) {
+        this.productId = id;
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.price = price;
+        this.isActive = isActive;
+        this.imageUrl = imageUrl;
+        this.stock = stockQuantity;
+    }
 
     // Getters and Setters for all attributes, including the new stock attribute
     public int getProductId() {
@@ -88,16 +113,30 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "productId=" + productId +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", category='" + category + '\'' +
-                ", price=" + price +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", isActive=" + isActive +
-                ", stock=" + stock +
-                ", createdAt=" + createdAt +
-                '}';
+        return String.format(
+                "+------------------------------------------------------------------+\n" +
+                        "| %-20s | %-40s |\n" +
+                        "+------------------------------------------------------------------+\n" +
+                        "| %-20s | %-40d |\n" +
+                        "| %-20s | %-40s |\n" +
+                        "| %-20s | %-40s |\n" +
+                        "| %-20s | %-40s |\n" +
+                        "| %-20s | %-40.2f |\n" +
+                        "| %-20s | %-40s |\n" +
+                        "| %-20s | %-40b |\n" +
+                        "| %-20s | %-40s |\n" +
+                        "| %-20s | %-40d |\n" +
+                        "+------------------------------------------------------------------+\n",
+                "Field", "Value",
+                "Product ID", productId,
+                "Name", name,
+                "Description", description,
+                "Category", category,
+                "Price", price,
+                "Image URL", imageUrl,
+                "Active", isActive,
+                "Created At", createdAt,
+                "Stock Quantity", stock
+        );
     }
 }

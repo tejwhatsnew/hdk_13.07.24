@@ -1,10 +1,15 @@
-package com.hsbc.ecommerce.service;
+package com.hsbc.ecommerce.dao;
 
-import com.hsbc.ecommerce.model.*;
+import com.hsbc.ecommerce.model.AdminAction;
+import com.hsbc.ecommerce.model.DeliverySchedule;
+import com.hsbc.ecommerce.model.Order;
+import com.hsbc.ecommerce.model.Product;
+import com.hsbc.ecommerce.model.Subscription;
 
 import java.util.List;
 
-public interface AdminService {
+public interface AdminDAO {
+
     void updateProduct(Product product);
     void deleteProduct(int productId);
 

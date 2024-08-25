@@ -62,4 +62,9 @@ public class CustomerServiceImpl implements CustomerService {
             throw new CustomerNotFoundException("Customer with ID " + customerId + " does not exist.");
         }
     }
+
+    @Override
+    public boolean isValidCustomer(int customerId) {
+        return true;
+    }
 }
