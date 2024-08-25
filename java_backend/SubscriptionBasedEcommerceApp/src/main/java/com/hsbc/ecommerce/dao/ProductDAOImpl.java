@@ -15,7 +15,7 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public void addProduct(Product product) {
-        String sql = "INSERT INTO Products (name, description, category, price, image_url, is_active, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Products (name, description, category, price, image_url, is_active, created_at, stock_quantity) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, product.getName());
             ps.setString(2, product.getDescription());
@@ -23,8 +23,8 @@ public class ProductDAOImpl implements ProductDAO {
             ps.setDouble(4, product.getPrice());
             ps.setString(5, product.getImageUrl());
             ps.setBoolean(6, product.isActive());
-//            ps.setInt(7, product.getStock());  // Set stock
             ps.setTimestamp(7, new Timestamp(System.currentTimeMillis()));
+            ps.setInt(8, product.getStock());
             ps.executeUpdate();
 
             ResultSet rs = ps.getGeneratedKeys();

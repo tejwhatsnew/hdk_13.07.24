@@ -3,6 +3,7 @@ package com.hsbc.ecommerce.dao;
 import com.hsbc.ecommerce.dao.exceptions.CustomerNotFoundException;
 import com.hsbc.ecommerce.model.Customer;
 import com.hsbc.ecommerce.model.Subscription;
+import com.hsbc.ecommerce.util.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -10,20 +11,8 @@ import java.util.List;
 
 
 public class CustomerDAOImpl implements CustomerDAO {
-    private static final String URL = "jdbc:mysql://localhost:3306/ecommercedb";
-    private static final String USER = "root";
-    private static final String PASSWORD = "root";
 
-    private Connection connection;
-
-    {
-        try {
-            connection = DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    };
-
+    private Connection connection = DatabaseConnection.getConnection();
 
     @Override
     public void addCustomer(Customer customer) {

@@ -74,6 +74,7 @@ public class AdminDaoImpl implements AdminDAO {
             stmt.setString(2, subscription.getType());
             stmt.setDate(3, new java.sql.Date(subscription.getStartDate().getTime()));
             stmt.setDate(4, new java.sql.Date(subscription.getEndDate().getTime()));
+            stmt.setDouble(5, 1000);
             stmt.setBoolean(6, subscription.isActive());
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -234,7 +235,7 @@ public class AdminDaoImpl implements AdminDAO {
                 Subscription subscription = new Subscription();
                 subscription.setId(rs.getInt("subscription_id"));
                 subscription.setUserId(rs.getInt("product_id"));
-                subscription.setType(rs.getString("type"));
+                subscription.setType(rs.getString("frequency"));
                 subscription.setStartDate(rs.getDate("custom_start_date"));
                 subscription.setEndDate(rs.getDate("custom_end_date"));
                 subscription.setActive(rs.getBoolean("is_active"));

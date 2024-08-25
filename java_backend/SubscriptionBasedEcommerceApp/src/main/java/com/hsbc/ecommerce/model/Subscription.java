@@ -44,5 +44,31 @@ public class Subscription {
 
     // Additional methods
     public boolean isOngoing() { return active && endDate.after(new Date()); }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "+------------------------------------------------------------------+\n" +
+                        "| %-20s | %-40s |\n" +
+                        "+------------------------------------------------------------------+\n" +
+                        "| %-20s | %-40d |\n" +
+                        "| %-20s | %-40d |\n" +
+                        "| %-20s | %-40s |\n" +
+                        "| %-20s | %-40s |\n" +
+                        "| %-20s | %-40s |\n" +
+                        "| %-20s | %-40b |\n" +
+                        "+------------------------------------------------------------------+\n",
+                "Field", "Value",
+                "ID", id,
+                "User Id", userId,
+                "Type", type,
+                "Start Date", startDate,
+                "End Date", endDate,
+                "Active", active
+        );
+    }
+
 }
+
+
 
