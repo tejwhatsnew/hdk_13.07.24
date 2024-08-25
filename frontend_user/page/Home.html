@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery E-commerce</title>
+
+        <!-- Favicon in ICO format -->
+        <link rel="icon" href="../assets/Home/Favicon.png" type="image/x-icon">
+
+
+    <!-- Linked TailwindCSS -->
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../style/Home.css">
+
+    <link rel="stylesheet" href="../style/root.css">
+
+</head>
+<body class="m-9 mt-3">
+
+    <!-- Navigation Bar Section -->
+    <nav class="bg-[#064C4F] bg-opacity-95 shadow rounded-lg p-1">
+        <div class="px-2 sm:px-4 lg:px-8">
+          <div class="flex h-16 justify-between items-center">
+            <!-- Hamburger Menu Button -->
+<div class="mr-4">
+    <button id="hamburger-menu" class="text-white focus:outline-none">
+        <!-- SVG for hamburger icon -->
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+    </button>
+       
+</div>
+
+            <!-- Logo Section -->
+            <div class="flex px-2 lg:px-0">
+              <div class="flex flex-shrink-0 items-center">
+                <img class="h-8 w-auto" src="../assets/Home/Navigation-Cart.png" alt="Your Company">
+                <!-- Company Name -->
+       <span class="text-white text-lg font-bold ms-3">Get it Fresh</span>
+              </div>
+              <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
+                <a href="../page/Home.html" id="home" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium text-white">Home</a>
+                <a href="#" id="team" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-300 hover:text-white">Orders</a>
+                <a href="#" id="projects" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-300 hover:text-white">Subscriptions</a>
+                <!-- <a href="#" id="calendar" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-300 hover:text-white">Calendar</a> -->
+              </div>
+              
+              
+            </div>
+            <!-- Search Bar -->
+            <div class="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
+                <div class="w-full max-w-lg lg:max-w-lg"> 
+                    <label for="search" class="sr-only">Search</label>
+                  <div class="relative">
+                    <input id="search" name="search" class="block w-full rounded-full border-0 bg-white py-1 pl-4 pr-12 text-gray-900 text-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xs sm:leading-6" placeholder="  Search for Groceries, Vegetables and more ...." type="search">
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                      <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Tagline -->
+
+            <div class="flex w-max items-center space-x-2 rounded-full p-2 pe-1 shadow-lg">
+                <svg class="h-6 w-6 text-yellow-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M13 2L4 14h6l-2 8 8-12H8l2-8z" />
+                  </svg>
+                <span class="text-xs font-medium text-gray-900 ml-0 text-white">Order now and get it within <span class="text-yellow-500 font-bold ">15 minutes</span></span>
+              </div>
+
+              <a href="../page/wallet-topup.html">
+                <div class="flex w-max cursor-pointer items-center space-x-2 rounded-full p-2 pe-1 shadow-lg">
+                  <span class="text-md font-medium text-gray-900 ml-0 text-white">₹ <span class="text-yellow-500 font-bold ">10000</span></span>
+                </div>
+              </a>
+                
+              
+              
+              
+              
+            <!-- Profile Section -->
+            <div class="hidden lg:ml-4 lg:flex lg:items-center">
+              <button onclick="window.location.href='cart.html';" id="profile-btn" type="button" class="relative flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                <span class="sr-only">View notifications</span>
+                <img class="h-7 w-7 rounded-full object-cover transition-transform transform scale-140" src="../assets/Home/Navigation-Cart 2.png" alt="Image">
+            </button>
+              <div class="relative ml-4 flex-shrink-0">
+                <div>
+                  <button id="user-menu-button" type="button" class="relative flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    <span class="sr-only">Open user menu</span>
+                    <img class="h-8 w-8 rounded-full" src="../assets/Home/Profile-Banner.png" alt="">
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Profile Tabs Section -->
+          <div id="profile-tabs" class="hidden mt-4 flex flex-col lg:flex-row lg:space-x-8">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Your Profile</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Settings</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Sign out</a>
+          </div>
+        </div>
+    </nav>
+
+
+    <!-- ---------- Banner Section --------  -->
+         <!-- Full Width Box -->
+    <div class="w-full mt-4 shadow rounded-lg flex items-center justify-between p-8 pe-0 pt-0 text-white curved-bottom box">
+        <!-- Left Section -->
+        <div class="flex-1 pr-8">
+            <h1 class="text-[50px] ml-10 font-bold mb-4">We bring the Store <br> to your Door</h1>
+            <p class="text-[18px] ml-10">Get organic produce and sustainably sourced groceries <br> delivery at up to 4% off grocery.</p>
+
+    <button class="bg-[#BAEA70] ml-10 mt-7 text-black font-semibold py-2 px-4 rounded-md hover:bg-[#a7d14b]">
+        Shop Now
+    </button>
+
+        </div>
+        <!-- Right Section with Image -->
+        <div class="">
+            <img src="../assets/Home/Grocery-Banner.png" alt="Grocery Image" class="object-cover rounded-lg">
+            
+        </div>
+    </div>
+
+
+
+
+    <!--------- Product Categories Section  -------->
+    <div class="relative bg-cover bg-center bg-no-repeat mt-6" style="background-image: url('your-transparent-background-image.png');">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          <!-- Organic Fruits -->
+          <div class="bg-[#B8D3B0] p-6 rounded-lg shadow-lg flex flex-col justify-center items-start bg-cover bg-center relative" style="background-image: url('../assets/Home/Organic-fruits-bg.png');">
+            <!-- Overlay to make text readable -->
+            <div class="absolute inset-0 bg-[#B8D3B0] opacity-60 rounded-lg"></div>
+            
+            <!-- Content (Text and Button) -->
+            <div class="relative z-10">
+              <h3 class="text-4xl font-semibold mb-4 leading-[1.4] text-[#243F2F]">
+                Organic<br/>Fruits
+              </h3>
+              <button class="bg-white text-sm font-normal text-black px-6 py-2 rounded-full">
+                Shop Now
+              </button>
+            </div>
+          </div>
+          
+          <!-- Vegetables -->
+          <div class="bg-[#FFDBA8] p-6 rounded-lg shadow-lg flex flex-col justify-center items-start bg-cover bg-center relative" style="background-image: url('../assets/Home/vegetables.avif');">
+            <!-- Overlay to make text readable -->
+            <div class="absolute inset-0 bg-[#FFDBA8] opacity-60 rounded-lg"></div>
+            
+            <!-- Content (Text and Button) -->
+            <div class="relative z-10">
+              <h3 class="text-4xl font-semibold mb-4 leading-[1.4] text-[#243F2F]">
+                Fresh <br>Vegetables
+              </h3>
+              <button class="bg-white text-sm font-normal text-black px-6 py-2 rounded-full">
+                Shop Now
+              </button>
+            </div>
+          </div>
+          
+          <!-- Ready to Eat -->
+          <div class="bg-[#C3E9ED] p-6 rounded-lg shadow-lg flex flex-col justify-center items-start bg-cover bg-center relative" style="background-image: url('../assets/Home/ready-to-eat.jpg');">
+            <!-- Overlay to make text readable -->
+            <div class="absolute inset-0 bg-[#C3E9ED] opacity-60 rounded-lg"></div>
+            
+            <!-- Content (Text and Button) -->
+            <div class="relative z-10">
+              <h3 class="text-4xl font-semibold mb-4 leading-[1.4] text-[#243F2F]">
+                Ready to <br>Eat
+              </h3>
+              <button class="bg-white text-sm font-normal text-black px-6 py-2 rounded-full">
+                Shop Now
+              </button>
+            </div>
+          </div>
+          
+          <!-- Fourth Box (no specific content mentioned) -->
+          <div class="bg-[#FFDBA8] p-6 rounded-lg shadow-lg flex flex-col justify-center items-start bg-cover bg-center relative" style="background-image: url('https://st3.depositphotos.com/9527076/18268/i/450/depositphotos_182680892-stock-photo-potato-chips-and-snacks-on.jpg');">
+            <!-- Overlay to make text readable -->
+            <div class="absolute inset-0 bg-[#FFDBA8] opacity-60 rounded-lg"></div>
+            
+            <!-- Content (Text and Button) -->
+            <div class="relative z-10">
+              <h3 class="text-4xl font-semibold mb-4 leading-[1.4] text-[#243F2F]">
+                <!-- Add specific content here -->
+                 Tasty <br>Snacks
+              </h3>
+              <button class="bg-white text-sm font-normal text-black px-6 py-2 rounded-full">
+                Shop Now
+              </button>
+            </div>
+          </div>
+      
+        </div>
+        
+
+      </div>
+      
+      
+      <!-- Products Section  -->
+      <div class="mt-20 flex justify-between items-center">
+        <!-- Title -->
+        <h2 class="text-3xl font-bold text-[#243F2F]">You might need</h2>
+        
+        <!-- See More Section -->
+        <a href="#" class="flex items-center text-sm text-[#B56049]">
+          <span>See more</span>
+          <svg class="ml-2 h-4 w-4 text-[#B56049]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+
+    <!-- Products Listing -->
+
+
+    <div id="products-section" class="w-full mt-10">
+        <div class="grid grid-cols-1 w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 px-4 py-8 gap-x- gap-y-8" id="product-container">
+            <!-- Product cards will be inserted here by JavaScript -->
+        </div>
+                    <!-- Products will be dynamically added here -->
+        </div>
+    </div>
+
+
+    
+    
+
+
+    <!-- Services Section  -->
+    <section class="mt-8">
+        <div class="px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- Section 1 -->
+                <div class="flex items-start p-6 bg-white text-left rounded-lg h-full">
+                    <div class="flex-shrink-0 bg-[#FFFCDF] p-2 rounded-full mr-4">
+                        <svg class="w-8 h-8 text-[#036956]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 11l4.95-4.95a2.992 2.992 0 00-.707-4.243l-2.828 2.828a2.992 2.992 0 00-4.243-.707l-4.95 4.95M9 14H5a2 2 0 00-2 2v1a2 2 0 002 2h1m8-2h-4v-4h4m4 0h2a2 2 0 002-2v-1a2 2 0 00-2-2h-2m0 0a2 2 0 00-2 2v1a2 2 0 002 2" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-1">Free Delivery Across the US!</h3>
+                        <p class="text-gray-600 text-sm">Free delivery for all orders above $100</p>
+                    </div>
+                </div>
+    
+                <!-- Section 2 -->
+                <div class="flex items-start p-6 bg-white text-left rounded-lg h-full">
+                    <div class="flex-shrink-0 bg-[#FFFCDF] p-2 rounded-full mr-4">
+                        <svg class="w-8 h-8 text-[#036956]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 3.927a.75.75 0 01.951.293l2.25 4.5a.75.75 0 00.707.423h4.95a.75.75 0 01.553 1.295l-4 3.25a.75.75 0 00-.266.844l1.488 5.307a.75.75 0 01-1.079.834l-4.11-2.8a.75.75 0 00-.855 0l-4.11 2.8a.75.75 0 01-1.079-.834L5.978 13.7a.75.75 0 00-.266-.844l-4-3.25A.75.75 0 012.662 9h4.95a.75.75 0 00.707-.423l2.25-4.5a.75.75 0 01.951-.293z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-1">100% Satisfaction Guarantee!</h3>
+                        <p class="text-gray-600 text-sm">Providing help in case of dissatisfaction</p>
+                    </div>
+                </div>
+    
+                <!-- Section 3 -->
+                <div class="flex items-start p-6 bg-white text-left rounded-lg h-full">
+                    <div class="flex-shrink-0 bg-[#FFFCDF] p-2 rounded-full mr-4">
+                        <svg class="w-8 h-8 text-[#036956]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.25 3A1.25 1.25 0 004 4.25v15.5A1.25 1.25 0 005.25 21h13.5A1.25 1.25 0 0020 19.75V4.25A1.25 1.25 0 0018.75 3H5.25zM12 19a3 3 0 11-6 0 3 3 0 016 0zm3-5H9v-2h6v2z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-1">Top-Notch Support</h3>
+                        <p class="text-gray-600 text-sm">Chat with us if you’ve any questions</p>
+                    </div>
+                </div>
+    
+                <!-- Section 4 -->
+                <div class="flex items-start p-6 bg-white text-left rounded-lg h-full">
+                    <div class="flex-shrink-0 bg-[#FFFCDF] p-2 rounded-full mr-4">
+                        <svg class="w-8 h-8 text-[#036956]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16.5V19a2 2 0 01-2 2H7a2 2 0 01-2-2v-2.5M6 10V6a2 2 0 012-2h8a2 2 0 012 2v4m-2 4v6h-2v-6M10 8h4m-4 0v8h4V8" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-1">Secure Payments</h3>
+                        <p class="text-gray-600 text-sm">We use safest payment technologies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+
+
+    <!-- Footer -->
+    
+
+    <footer class="bg-[#036956] text-white py-8 mt-10 rounded-xl mb-0">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- First Part -->
+                <div class="flex flex-col space-y-4 mb-8 lg:mb-0">
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="list-none text-sm space-y-2">
+                        <li><a href="#" class="hover:underline">About Us</a></li>
+                        <li><a href="#" class="hover:underline">Contact Us</a></li>
+                        <li><a href="#" class="hover:underline">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:underline">Refund Policy</a></li>
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Delivery Info</a></li>
+                        <li><a href="#" class="hover:underline">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Second Part -->
+                <div class="flex flex-col items-center justify-center mb-8 lg:mb-0">
+                    <h2 class="text-2xl font-bold mb-2">Get it Fresh</h2>
+                    <p class="text-sm mt-5 mb-2 text-center">
+                        We're Tasty Daily Shop, an innovative team of food engineers. Our unique model minimizes fresh food handling by up to 85%, sourcing locally and dispatching within hours through cold chain logistics in eco-friendly containers.
+                    </p>
+                    <p class="text-xs text-center mt-5">© 2024 Get it Fresh CodeFury</p>
+                </div>
+    
+                <!-- Third Part -->
+                <div class="flex flex-col ps-5 justify-center">
+                    <h3 class="text-xl font-semibold mb-2 text-right">Get Latest News</h3>
+                    <p class="text-xs mb-4 text-right">
+                        Sign up to get 10% off your first order and stay up to date on the latest product releases, special offers, and new.
+                    </p>
+                    <div class="flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-4">
+                        <input type="email" placeholder=" Enter your email" class="p-2 rounded-full bg-transparent border border-gray-300 text-xs w-full max-w-xs" />
+                        <button class="bg-[#4DAD24] text-sm py-2 px-4 rounded-lg">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+
+
+    <!-- Linking Custom JS File -->
+<script src="../js/Home.js"></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery E-commerce</title>
+
+            <!-- Favicon in ICO format -->
+            <link rel="icon" href="../assets/Home/Favicon.png" type="image/x-icon">
+
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../style/product.css">
+    <link rel="stylesheet" href="../style/root.css">
+</head>
+<body class="m-9 mt-3">
+
+    <!-- Navigation Bar Section -->
+    <nav class="bg-[#064C4F] bg-opacity-95 shadow rounded-lg p-1">
+        <div class="px-2 sm:px-4 lg:px-8">
+          <div class="flex h-16 justify-between items-center">
+            <!-- Hamburger Menu Button -->
+<div class="mr-4">
+    <button id="hamburger-menu" class="text-white focus:outline-none">
+        <!-- SVG for hamburger icon -->
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+    </button>
+       
+</div>
+
+            <!-- Logo Section -->
+            <div class="flex px-2 lg:px-0">
+              <div class="flex flex-shrink-0 items-center">
+                <img class="h-8 w-auto" src="../assets/Home/Navigation-Cart.png" alt="Your Company">
+                <!-- Company Name -->
+       <span class="text-white text-lg font-bold ms-3">Get it Fresh</span>
+              </div>
+              <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
+                <a href="/page/Home.html" id="home" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium text-white">Home</a>
+                <a href="#" id="team" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-300 hover:text-white">Orders</a>
+                <a href="#" id="projects" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-300 hover:text-white">Subscriptions</a>
+                <!-- <a href="#" id="calendar" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-300 hover:text-white">Calendar</a> -->
+              </div>
+              
+              
+            </div>
+            <!-- Search Bar -->
+            <div class="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
+                <div class="w-full max-w-lg lg:max-w-lg"> 
+                    <label for="search" class="sr-only">Search</label>
+                  <div class="relative">
+                    <input id="search" name="search" class="block w-full rounded-full border-0 bg-white py-1 pl-4 pr-12 text-gray-900 text-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xs sm:leading-6" placeholder="  Search for Groceries, Vegetables and more ...." type="search">
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                      <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Tagline -->
+
+            <div class="flex w-max items-center space-x-2 rounded-full p-2 pe-1 shadow-lg">
+                <svg class="h-6 w-6 text-yellow-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M13 2L4 14h6l-2 8 8-12H8l2-8z" />
+                  </svg>
+                <span class="text-xs font-medium text-gray-900 ml-0 text-white">Order now and get it within <span class="text-yellow-500 font-bold ">15 minutes</span></span>
+              </div>
+
+              <a href="../page/wallet-topup.html">
+                <div class="flex w-max cursor-pointer items-center space-x-2 rounded-full p-2 pe-1 shadow-lg">
+                  <span class="text-md font-medium text-gray-900 ml-0 text-white">₹ <span class="text-yellow-500 font-bold ">10000</span></span>
+                </div>
+              </a>
+                
+              
+              
+              
+              
+            <!-- Profile Section -->
+            <div class="hidden lg:ml-4 lg:flex lg:items-center">
+              <button onclick="window.location.href='cart.html';" id="profile-btn" type="button" class="relative flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                <span class="sr-only">View notifications</span>
+                <img class="h-7 w-7 rounded-full object-cover transition-transform transform scale-140" src="../assets/Home/Navigation-Cart 2.png" alt="Image">
+            </button>
+              <div class="relative ml-4 flex-shrink-0">
+                <div>
+                  <button id="user-menu-button" type="button" class="relative flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    <span class="sr-only">Open user menu</span>
+                    <img class="h-8 w-8 rounded-full" src="../assets/Home/Profile-Banner.png" alt="">
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Profile Tabs Section -->
+          <div id="profile-tabs" class="hidden mt-4 flex flex-col lg:flex-row lg:space-x-8">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Your Profile</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Settings</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Sign out</a>
+          </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Product Details Sections -->
+    <main class="mx-auto mt-20 max-w-2xl px-4 pb-16 sm:px-6 sm:pb-24 lg:max-w-7xl lg:px-8">
+        <div class="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
+          <div class="lg:col-span-5 lg:col-start-8">
+            <div class="flex justify-between">
+              <h1 id="product-title" class="text-5xl font-medium mb-5 text-gray-900">Product Name</h1>
+            </div>
+            <p class="text-2xl mt-1 text-[#4DAD24] mb-5 font-bold text-900 product-price" id="product-price">$35</p>
+
+            <!-- Reviews -->
+            <div class="mt-4">
+              <h2 class="sr-only">Reviews</h2>
+              <div class="flex items-center">
+                <p class="text-m text-gray-700">
+                  5
+                  <span class="sr-only"> out of 5 stars</span>
+                </p>
+                <div class="ml-1 flex items-center">
+                  <!-- Active: "text-yellow-400", Inactive: "text-gray-200" -->
+                  <svg class="h-5 w-5 flex-shrink-0 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                  </svg>
+                  <svg class="h-5 w-5 flex-shrink-0 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                  </svg>
+                  <svg class="h-5 w-5 flex-shrink-0 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                  </svg>
+                  <svg class="h-5 w-5 flex-shrink-0 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                  </svg>
+                  <svg class="h-5 w-5 flex-shrink-0 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div aria-hidden="true" class="ml-4 text-sm text-gray-300">·</div>
+                <div class="ml-4 flex">
+                  <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">See all reviews</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Image gallery -->
+          <div class="mt-8 lg:col-span-7 lg:col-start-1 lg:row-span-3 lg:row-start-1 lg:mt-0">
+            <h2 class="sr-only">Images</h2>
+    
+            <div class="flex">
+              <div class="flex justify-center items-center mt-auto">
+                <img id="product-image" src="" alt="Product Image" class="rounded-lg">
+              </div>
+
+            </div>
+          </div>
+    
+          <div class="mt-8 lg:col-span-5">
+            <div>
+
+
+
+                      <!-- Quantity Selector -->
+                      <div class="mt-0 flex items-center">
+                        <button id="decrease-quantity" class="text-gray-600 focus:outline-none focus:text-gray-900 bg-gray-200 px-4 py-2 rounded-l-lg">-</button>
+                        <span id="quantity" class="mx-3 text-lg text-gray-700">1</span>
+                        <button id="increase-quantity" class="text-gray-600 focus:outline-none focus:text-gray-900 bg-gray-200 px-4 py-2 rounded-r-lg">+</button>
+                    </div>
+        
+                    <p class="mt-8 text-xl font-semibold">Total: ₹<span id="total-price"></span></p>
+                </div>
+
+            <!-- Subscription Picker -->
+            <div class="mt-8">
+              <div class="flex items-center justify-between">
+                  <h2 class="text-md font-medium text-gray-900">Subscription Type</h2>
+                  <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">See subscription details</a>
+              </div>
+          
+              <fieldset aria-label="Choose a subscription type" class="mt-2">
+                <div class="grid mt-5 grid-cols-2 gap-3 sm:grid-cols-4">
+                  <!-- Daily -->
+                  <label class="flex cursor-pointer items-center justify-center rounded-md border px-4 py-3 text-sm font-medium uppercase focus:outline-none sm:flex-1 subscription-option">
+                    <input type="radio" name="subscription-choice" value="Daily" class="sr-only" checked>
+                    <span>Daily</span>
+                  </label>
+              
+                  <!-- Alternate Days -->
+                  <label class="flex cursor-pointer items-center justify-center rounded-md border px-4 py-3 text-sm font-medium uppercase focus:outline-none sm:flex-1 subscription-option">
+                    <input type="radio" name="subscription-choice" value="Alternate Days" class="sr-only">
+                    <span>Alternate Days</span>
+                  </label>
+              
+                  <!-- Weekly -->
+                  <label class="flex cursor-pointer items-center justify-center rounded-md border px-4 py-3 text-sm font-medium uppercase focus:outline-none sm:flex-1 subscription-option">
+                    <input type="radio" name="subscription-choice" value="Weekly" class="sr-only">
+                    <span>Weekly</span>
+                  </label>
+              
+                  <!-- Monthly -->
+                  <label class="flex cursor-pointer items-center justify-center rounded-md border px-4 py-3 text-sm font-medium uppercase focus:outline-none sm:flex-1 subscription-option">
+                    <input type="radio" name="subscription-choice" value="Monthly" class="sr-only">
+                    <span>Monthly</span>
+                  </label>
+                </div>
+              </fieldset>
+              
+          </div>
+          
+             <!-- DATE -->
+             <div class="mt-8 p-6 bg-white rounded-lg shadow-lg">
+              <h2 class="text-lg font-semibold text-gray-900 mb-4">Select Date and Time</h2>
+              
+              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <!-- From Date -->
+                <div>
+                  <label for="from-date" class="block text-sm font-medium text-gray-700 mb-2">From Date</label>
+                  <input type="date" id="from-date" class="block w-full border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                </div>
+            
+                <!-- To Date -->
+                <div>
+                  <label for="to-date" class="block text-sm font-medium text-gray-700 mb-2">To Date</label>
+                  <input type="date" id="to-date" class="block w-full border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                </div>
+              </div>
+            
+              <!-- Time Picker -->
+              <div class="mt-6">
+                <label for="time-picker" class="block text-sm font-medium text-gray-700 mb-2">Select Time</label>
+                <input type="time" id="time-picker" class="block w-full border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              </div>
+            </div>
+    
+              <!-- <button type="" class="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to cart</button> -->
+              <button id="add-to-cart" class="bg-white text-black mt-2 py-2 px-4 rounded-full border-2 border-[#BAEA70] flex items-center">
+                Add to Cart
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 ms-2 w-5 mr-2" fill="#BAEA70" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-2 8h14M5 21a1 1 0 100-2 1 1 0 000 2zm12 0a1 1 0 100-2 1 1 0 000 2z" />
+                </svg>
+            </button>
+            
+            
+            
+            </form>
+
+
+         
+            
+          
+            
+
+    
+            <!-- Product details -->
+            <div class="mt-10">
+              <h2 class="text-md font-medium text-gray-900">Description</h2>
+    
+              <div id="product-description" class="prose prose-sm mt-4 text-gray-500">
+                <p>The Basic tee is an honest new take on a classic. The tee uses super soft, pre-shrunk cotton for true comfort and a dependable fit. They are hand cut and sewn locally, with a special dye technique that gives each tee it's own look.</p>
+                <p>Looking to stock your closet? The Basic tee also comes in a 3-pack or 5-pack at a bundle discount.</p>
+              </div>
+            </div>
+    
+            <div class="mt-8 border-t border-gray-200 pt-8">
+              <h2 class="text-md font-medium text-gray-900">Our Qualities</h2>
+            </div>
+    
+            <!-- Policies -->
+            <section aria-labelledby="policies-heading" class="mt-10">
+              <h2 id="policies-heading" class="sr-only">Our Policies</h2>
+    
+              <dl class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                <div class="rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
+                  <dt>
+                    <svg class="mx-auto h-6 w-6 flex-shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
+                    </svg>
+                    <span class="mt-4 text-sm font-medium text-gray-900">International delivery</span>
+                  </dt>
+                  <dd class="mt-1 text-sm text-gray-500">Get your order regularly on time</dd>
+                </div>
+                <div class="rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
+                  <dt>
+                    <svg class="mx-auto h-6 w-6 flex-shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="mt-4 text-sm font-medium text-gray-900">Loyalty rewards</span>
+                  </dt>
+                  <dd class="mt-1 text-sm text-gray-500">Get Points on each order</dd>
+                </div>
+              </dl>
+            </section>
+          </div>
+        </div>
+    
+        <!-- Reviews -->
+        <section aria-labelledby="reviews-heading" class="mt-16 sm:mt-24">
+          <h2 id="reviews-heading" class="text-lg font-medium text-gray-900">Recent reviews</h2>
+    
+          <div class="mt-6 space-y-10 divide-y divide-gray-200 border-b border-t border-gray-200 pb-10">
+            <div class="pt-10 lg:grid lg:grid-cols-12 lg:gap-x-8">
+              <div class="lg:col-span-8 lg:col-start-5 xl:col-span-9 xl:col-start-4 xl:grid xl:grid-cols-3 xl:items-start xl:gap-x-8">
+                <div class="flex items-center xl:col-span-1">
+                  <div class="flex items-center">
+                    <!-- Active: "text-yellow-400", Inactive: "text-gray-200" -->
+                    <svg class="h-5 w-5 flex-shrink-0 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                    </svg>
+                    <svg class="h-5 w-5 flex-shrink-0 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                    </svg>
+                    <svg class="h-5 w-5 flex-shrink-0 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                    </svg>
+                    <svg class="h-5 w-5 flex-shrink-0 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                    </svg>
+                    <svg class="h-5 w-5 flex-shrink-0 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-sm text-gray-700">5<span class="sr-only"> out of 5 stars</span></p>
+                </div>
+    
+                <div class="mt-4 lg:mt-6 xl:col-span-2 xl:mt-0">
+                  <h3 class="text-sm font-medium text-gray-900">
+                    Great products and reliable shipping</h3>
+    
+                  <div class="mt-3 space-y-6 text-sm text-gray-500">
+                    <p>It's not called Best grocery for nothing. I've been shopping from them for a few years now and there is always good availability, fast delivery and most often the cheapest prices compared to other online sites selling Turkish products.
+                      Customer service has always been very good too.
+                      
+                      </p>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="mt-6 flex items-center text-sm lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:mt-0 lg:flex-col lg:items-start xl:col-span-3">
+                <p class="font-medium text-gray-900">Tanmay Kadam</p>
+                <time datetime="2021-01-06" class="ml-4 border-l border-gray-200 pl-4 text-gray-500 lg:ml-0 lg:mt-2 lg:border-0 lg:pl-0">Aug 16, 2024</time>
+              </div>
+            </div>
+    
+            <!-- More reviews... -->
+          </div>
+        </section>
+    
+        <!-- Related products -->
+        <section aria-labelledby="related-heading" class="mt-16 sm:mt-24">
+          <h2 id="related-heading" class="text-lg font-medium text-gray-900">Customers also purchased</h2>
+        
+          <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 related-products-grid">
+            <!-- Random products will be inserted here -->
+          </div>
+        </section>
+        
+      </main>
+
+
+
+
+
+    <div id="product-details" class="container">
+        <!-- Product details will be inserted here by JavaScript -->
+    </div>
+
+
+
+    <!-- Footer  -->
+    <footer class="bg-[#036956] text-white py-8 mt-10 rounded-xl mb-0">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- First Part -->
+                <div class="flex flex-col space-y-4 mb-8 lg:mb-0">
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="list-none text-sm space-y-2">
+                        <li><a href="#" class="hover:underline">About Us</a></li>
+                        <li><a href="#" class="hover:underline">Contact Us</a></li>
+                        <li><a href="#" class="hover:underline">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:underline">Refund Policy</a></li>
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Delivery Info</a></li>
+                        <li><a href="#" class="hover:underline">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Second Part -->
+                <div class="flex flex-col items-center justify-center mb-8 lg:mb-0">
+                    <h2 class="text-2xl font-bold mb-2">Get it Fresh</h2>
+                    <p class="text-sm mt-5 mb-2 text-center">
+                        We're Tasty Daily Shop, an innovative team of food engineers. Our unique model minimizes fresh food handling by up to 85%, sourcing locally and dispatching within hours through cold chain logistics in eco-friendly containers.
+                    </p>
+                    <p class="text-xs text-center mt-5">© 2024 Get it Fresh CodeFury</p>
+                </div>
+    
+                <!-- Third Part -->
+                <div class="flex flex-col ps-5 justify-center">
+                    <h3 class="text-xl font-semibold mb-2 text-right">Get Latest News</h3>
+                    <p class="text-xs mb-4 text-right">
+                        Sign up to get 10% off your first order and stay up to date on the latest product releases, special offers, and new.
+                    </p>
+                    <div class="flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-4">
+                        <input type="email" placeholder=" Enter your email" class="p-2 rounded-full bg-transparent border border-gray-300 text-xs w-full max-w-xs" />
+                        <button class="bg-[#4DAD24] text-sm py-2 px-4 rounded-lg">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/products.js"></script>
+</body>
+</html>

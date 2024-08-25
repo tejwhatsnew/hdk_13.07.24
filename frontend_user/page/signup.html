@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style/login.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                lime: {
+                  50: '#f7fee7',
+                  100: '#ecfccb',
+                  200: '#d9f99d',
+                  300: '#bef264',
+                  400: '#a3e635',
+                  500: '#84cc16',
+                  600: '#65a30d',
+                  700: '#4d7c0f',
+                  800: '#3f6212',
+                  900: '#365314',
+                }
+              }
+            }
+          }
+        }
+      </script>
+</head>
+<body class="">
+    <main class="container mx-auto p-8 flex justify-start ">
+        <div class="w-3/4 xl:w-3/4 lg:w-3/4 md:w-3/4 sm:w-full bg-lime-300 shadow-lg rounded-lg p-8 border-2 border-lime-800">
+            <h2 class="text-4xl text-center font-bold text-lime-900 mb-8">Create an Account</h2>
+            <form id="registrationForm" class="bg-transparent p-8">
+                <div class="mb-4">
+                    <label class="block text-lime-900" for="username">Username</label>
+                    <input type="text" id="username" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-lime-900" for="email">Email</label>
+                    <input type="email" id="email" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-lime-900" for="password">Password</label>
+                    <input type="password" id="password" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-lime-900" for="address">Address</label>
+                    <input type="text" id="address" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-lime-900" for="phone_number">Phone Number</label>
+                    <input type="tel" id="phone_number" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-lime-900" for="otp">OTP</label>
+                    <input type="text" id="otp" class="mt-2 w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter OTP sent to your email">
+                </div>
+                <button type="button" id="sendOtpBtn" class="bg-blue-600 text-bold text-white px-4 py-2 rounded-lg hover:bg-blue-700">Send OTP</button>
+                <button type="submit" id="registerBtn" class="bg-lime-900 text-bold text-white px-4 py-2 rounded-lg mt-4 hover:bg-lime-800 hover:border-2">Register</button>
+            </form>
+        </div>
+        <div class="w-1/4 xl:w-1/4 lg:w-1/4 md:w-1/4 sm:w-full ml-6">
+            <img src="../assets/profile/bg1.jpg" alt="Vertical Image" class="w-full h-full object-cover rounded-lg">
+        </div>
+    </main>
+    <script src="/js/sign-up.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+** General reset and font within credit-card context */
+.credit-card * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Credit card container styling */
+  .credit-card {
+    position: relative;
+    background-image: url("../assets/Home/bg.png");
+    background-size: cover;
+    padding: 25px;
+    border-radius: 11px;
+    max-width: 380px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Body styling specific to the credit card context */
+  .credit-card-body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e3f2fd;
+  }
+  
+  /* Header styling within credit-card context */
+  .credit-card .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .credit-card .card-header .logo img {
+    width: 48px;
+    margin-right: 10px;
+  }
+  
+  .credit-card .card-header h5 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+  }
+  
+  .credit-card .card-header .chip {
+    width: 60px;
+  }
+  
+  /* Card details styling within credit-card context */
+  .credit-card .card-details {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  .credit-card .card-details h6 {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 400;
+  }
+  
+  .credit-card .card-details .number {
+    margin-top: 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  
+  .credit-card .card-details .name {
+    margin-top: 20px;
+  }
+  
+  .credit-card .card-details h5 {
+    color: #fff;
+  }
+  

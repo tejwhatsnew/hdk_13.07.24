@@ -1,0 +1,72 @@
+[
+    {
+      "name": "Alphonso Mango",
+      "description": "Premium quality Alphonso mangoes from Ratnagiri",
+      "category": "Fruits",
+      "price": 1200.00,
+      "image_url": "https://purepng.com/public/uploads/large/purepng.com-mangomangofruithalvedfrontalfullsweetfresh-481521564634qp959.png"
+    },
+    {
+      "name": "Nagpur Oranges",
+      "description": "Fresh oranges directly from Nagpur farms",
+      "category": "Fruits",
+      "price": 500.00,
+      "image_url": "https://static.vecteezy.com/system/resources/previews/022/825/544/original/orange-fruit-orange-on-transparent-background-free-png.png"
+    },
+    {
+      "name": "Basmati Rice",
+      "description": "Aromatic long-grain basmati rice from Punjab",
+      "category": "Meals",
+      "price": 900.00,
+      "image_url": "https://static.vecteezy.com/system/resources/previews/027/144/327/original/tasty-cooked-white-rice-isolated-on-transparent-background-png.png"
+    },
+    {
+      "name": "Tandoori Roti",
+      "description": "Whole wheat tandoori rotis",
+      "category": "Snacks",
+      "price": 150.00,
+      "image_url": "https://static.vecteezy.com/system/resources/previews/026/757/657/original/thai-roti-with-ai-generated-free-png.png"
+    },
+    {
+      "name": "Paneer Tikka",
+      "description": "Delicious paneer tikka with spices",
+      "category": "Meals",
+      "price": 300.00,
+      "image_url": "https://thumbs.dreamstime.com/b/delicious-indian-paneer-tikka-masala-bowl-white-background-generative-ai-280540195.jpg"
+    },
+    {
+      "name": "Masala Dosa",
+      "description": "Crispy masala dosa with chutney and sambar",
+      "category": "Meals",
+      "price": 200.00,
+      "image_url": "https://t4.ftcdn.net/jpg/06/09/08/77/360_F_609087720_7O4YwLCId5mjZs0ZMqRevhsrZDwpDFKj.jpg"
+    },
+    {
+      "name": "Gujarati Farsan",
+      "description": "Authentic Gujarati farsan",
+      "category": "Snacks",
+      "price": 350.00,
+      "image_url": "https://png.pngtree.com/png-vector/20240116/ourmid/pngtree-diwali-snacks-chakli-besan-sev-and-chivada-farsan-flour-hindu-png-image_11447484.png"
+    },
+    {
+      "name": "Kaju Katli",
+      "description": "Premium cashew-based sweet",
+      "category": "Snacks",
+      "price": 800.00,
+      "image_url": "https://wallpapers.com/images/high/kaju-katli-indian-sweet-delicacy-req2non9nocz0yp5.png"
+    },
+    {
+      "name": "Kashmiri Apples",
+      "description": "Fresh apples from the orchards of Kashmir",
+      "category": "Fruits",
+      "price": 700.00,
+      "image_url": "https://pngfre.com/wp-content/uploads/apple-poster.png"
+    },
+    {
+      "name": "Green Vegetable",
+      "description": "Vegan",
+      "category": "Vegetables",
+      "price": 80.00,
+      "image_url": "https://static.vecteezy.com/system/resources/previews/021/275/047/original/green-vegetables-isolated-on-a-transparent-background-png.png"
+    }
+  ]

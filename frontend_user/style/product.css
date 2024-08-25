@@ -1,0 +1,16 @@
+
+body {
+    background-color: #F3F6F5;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 10pxs;
+}
+
+body {
+    margin-top: 0;
+}
+
+.subscription-option.active {
+    background-color: #4F46E5; /* Indigo-600 */
+    color: white;
+    border-color: #4F46E5; /* Indigo-600 */
+}
