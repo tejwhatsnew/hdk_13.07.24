@@ -1,7 +1,6 @@
 package com.hsbc.ecommerce.dao;
 
 import com.hsbc.ecommerce.model.Product;
-import com.hsbc.ecommerce.util.DatabaseConnection;
 import org.junit.jupiter.api.*;
 
 import java.sql.Connection;
@@ -12,7 +11,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AdminDaoTest {
+class AdminDAOTest {
 
     private AdminDaoImpl adminDao;
     private Connection connection;
