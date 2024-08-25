@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        lime: {
+                            50: '#f7fee7',
+                            100: '#ecfccb',
+                            200: '#d9f99d',
+                            300: '#bef264',
+                            400: '#a3e635',
+                            500: '#84cc16',
+                            600: '#65a30d',
+                            700: '#4d7c0f',
+                            800: '#3f6212',
+                            900: '#365314',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-lime-50 flex flex-col min-h-screen">
+
+   <!-- Header -->
+    <header>
+        <nav class="bg-[#064C4F] bg-opacity-95 shadow rounded-lg p-1">
+            <div class="px-2 sm:px-4 lg:px-8">
+              <div class="flex h-16 justify-between items-center">
+                <!-- Hamburger Menu Button -->
+    <div class="mr-4">
+        <button id="hamburger-menu" class="text-white focus:outline-none">
+            <!-- SVG for hamburger icon -->
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+           
+    </div>
+    
+                <!-- Logo Section -->
+                <div class="flex px-2 lg:px-0">
+                  <div class="flex flex-shrink-0 items-center">
+                    <img class="h-8 w-auto" src="../assets/Home/Navigation-Cart.png" alt="Your Company">
+                    <!-- Company Name -->
+           <span class="text-white text-lg font-bold ms-3">Get it Fresh</span>
+                  </div>
+                  <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
+                    <a href="#" id="home" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium text-white">Home</a>
+                    <a href="#" id="team" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-300 hover:text-white">Orders</a>
+                    <a href="#" id="projects" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-300 hover:text-white">Subscriptions</a>
+                    <!-- <a href="#" id="calendar" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-300 hover:text-white">Calendar</a> -->
+                  </div>
+                  
+                  
+                </div>
+                <!-- Search Bar -->
+                <div class="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
+                    <div class="w-full max-w-lg lg:max-w-lg"> 
+                        <label for="search" class="sr-only">Search</label>
+                      <div class="relative">
+                        <input id="search" name="search" class="block w-full rounded-full border-0 bg-white py-1 pl-4 pr-12 text-gray-900 text-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xs sm:leading-6" placeholder="  Search for Groceries, Vegetables and more ...." type="search">
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                          <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                <!-- Tagline -->
+    
+                <div class="flex w-max items-center space-x-2 rounded-full p-2 pe-1 shadow-lg">
+                    <svg class="h-6 w-6 text-yellow-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M13 2L4 14h6l-2 8 8-12H8l2-8z" />
+                      </svg>
+                    <span class="text-xs font-medium text-gray-900 ml-0 text-white">Order now and get it within <span class="text-yellow-500 font-bold ">15 minutes</span></span>
+                  </div>
+                 
+                <!-- Profile Section -->
+                <div class="hidden lg:ml-4 lg:flex lg:items-center">
+                  <button id="profile-btn" type="button" class="relative flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    <span class="sr-only">View notifications</span>
+                    <img class="h-7 w-7 rounded-full object-cover transition-transform transform scale-140" src="../assets/Home/Navigation-Cart 2.png" alt="Image">
+                </button>
+                  <div class="relative ml-4 flex-shrink-0">
+                    <div>
+                      <button id="user-menu-button" type="button" class="relative flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                        <span class="sr-only">Open user menu</span>
+                        <img class="h-8 w-8 rounded-full" src="../assets/Home/Profile-Banner.png" alt="">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Profile Tabs Section -->
+              <div id="profile-tabs" class="hidden mt-4 flex flex-col lg:flex-row lg:space-x-8">
+                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Your Profile</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Settings</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Sign out</a>
+              </div>
+            </div>
+        </nav>
+    
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-8 mb-8">
+        <div class="bg-gray-100 text-black p-8 rounded-lg shadow-lg max-w-lg w-full">
+            <h2 class="text-4xl font-bold mb-6 text-center">Your Profile</h2>
+            <div id="profileInfo" class="space-y-6">
+                <!-- User Info -->
+                <div class="flex items-center space-x-4">
+                    <!-- <img src="/assets/bg.jpg" alt="User Picture" class="w-24 h-24 rounded-full shadow-md"> -->
+                    <div class="relative">
+                        <img id="userImage" src="/assets/woman.png
+                        ." alt="User Picture" class="w-24 h-24 rounded-full shadow-md cursor-pointer">
+                        <input type="file" id="imageUpload" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer" onchange="previewImage(event)">
+                    </div>
+                    <div id="username" class="text-xl font-bold">Username</div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <img src="/assets/phone.png" alt="Phone Icon" class="w-6 h-6">
+                    <div id="phone_number" class="text-lg">+1 (234) 567-890</div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <img src="/assets/message.png" alt="Email Icon" class="w-6 h-6">
+                    <div id="email" class="text-lg">user@example.com</div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <img src="/assets/location-pin.png" alt="Email Icon" class="w-6 h-6">
+                    <div id="address" class="text-lg">1234 Elm Street, Springfield, IL</div>
+                    <button id="editAddressBtn"
+                        class="bg-lime-500 hover:bg-lime-400 text-white font-bold py-2 px-4 rounded">Edit</button>
+                </div>
+                <button id="saveProfileBtn" class="bg-white text-lime-500 font-bold py-2 px-4 rounded hidden">
+                    Save
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#036956] text-white py-8 mt-10 rounded-xl mb-0">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- First Part -->
+                <div class="flex flex-col space-y-4 mb-8 lg:mb-0">
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="list-none text-sm space-y-2">
+                        <li><a href="#" class="hover:underline">About Us</a></li>
+                        <li><a href="#" class="hover:underline">Contact Us</a></li>
+                        <li><a href="#" class="hover:underline">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:underline">Refund Policy</a></li>
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Delivery Info</a></li>
+                        <li><a href="#" class="hover:underline">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Second Part -->
+                <div class="flex flex-col items-center justify-center mb-8 lg:mb-0">
+                    <h2 class="text-2xl font-bold mb-2">Get it Fresh</h2>
+                    <p class="text-sm mt-5 mb-2 text-center">
+                        We're Tasty Daily Shop, an innovative team of food engineers. Our unique model minimizes fresh food handling by up to 85%, sourcing locally and dispatching within hours through cold chain logistics in eco-friendly containers.
+                    </p>
+                    <p class="text-xs text-center mt-5">© 2024 Get it Fresh CodeFury</p>
+                </div>
+    
+                <!-- Third Part -->
+                <div class="flex flex-col ps-5 justify-center">
+                    <h3 class="text-xl font-semibold mb-2 text-right">Get Latest News</h3>
+                    <p class="text-xs mb-4 text-right">
+                        Sign up to get 10% off your first order and stay up to date on the latest product releases, special offers, and new.
+                    </p>
+                    <div class="flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-4">
+                        <input type="email" placeholder=" Enter your email" class="p-2 rounded-full bg-transparent border border-gray-300 text-xs w-full max-w-xs" />
+                        <button class="bg-[#4DAD24] text-sm py-2 px-4 rounded-lg">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="/js/profile.js"></script>
+</body>
+
+</html>
