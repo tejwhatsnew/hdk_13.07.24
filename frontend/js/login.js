@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loginForm.addEventListener("submit", function(event) {
         event.preventDefault();
         
-        // Clear previous error messages
         document.getElementById('usernameError').textContent = '';
         document.getElementById('passwordError').textContent = '';
 
@@ -21,18 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Retrieve the stored data from sessionStorage
         const users = JSON.parse(sessionStorage.getItem("users")) || [];
-
-        // Check if the user exists
         const user = users.find(user => user.username === username && user.password === password);
 
         if (user) {
-            alert('Login successful!');
-            // Redirect to a different page if needed
-            window.location.href = "index.html"; // Example redirection
+            sessionStorage.setItem("loggedInUser", JSON.stringify(user));
+            // document.querySelector('.login-success').textContent = 'You successfully logged in!';
+            setTimeout(() => {
+                window.location.href = "profile.html"; 
+            }, 1000);
         } else {
             document.getElementById('passwordError').textContent = 'Invalid username or password';
         }
     });
 });
+
