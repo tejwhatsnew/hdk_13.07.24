@@ -152,13 +152,49 @@ public class ApplicationUI2 {
         }
     }
 
+//    private static void customerMenu(int customerId) throws CustomerNotFoundException {
+//        while (true) {
+//            System.out.println("Customer Menu:");
+//            System.out.println("1. View Products");
+//            System.out.println("2. Subscribe to Product");
+//            System.out.println("3. View My Subscriptions");
+//            System.out.println("5. Log Out");
+//            System.out.print("Please select an option: ");
+//
+//            int choice = scanner.nextInt();
+//            scanner.nextLine();
+//
+//            switch (choice) {
+//                case 1:
+//                    viewAllProducts();
+//                    break;
+//                case 2:
+//                    subscribeToProduct(customerId);
+//                    break;
+//                case 3:
+//                    viewCustomerSubscriptions(customerId);
+//                    break;
+//                case 4:
+//                    System.out.println("Logging out...");
+//                    return;
+//                default:
+//                    System.out.println("Invalid option, please try again.");
+//            }
+//        }
+//    }
+
     private static void customerMenu(int customerId) throws CustomerNotFoundException {
         while (true) {
             System.out.println("Customer Menu:");
             System.out.println("1. View Products");
             System.out.println("2. Subscribe to Product");
             System.out.println("3. View My Subscriptions");
-            System.out.println("5. Log Out");
+            System.out.println("4. Top Up Wallet");
+            System.out.println("5. Deduct From Wallet");
+            System.out.println("6. Update Profile");
+            System.out.println("7. Delete Account");
+            System.out.println("8. Log Out");
+            System.out.println("9. View Wallet Balance");
             System.out.print("Please select an option: ");
 
             int choice = scanner.nextInt();
@@ -175,8 +211,44 @@ public class ApplicationUI2 {
                     viewCustomerSubscriptions(customerId);
                     break;
                 case 4:
+                    System.out.println("Enter Amount to add to wallet : ");
+                    double amt =  scanner.nextDouble();
+                    customerService.topUpWallet(customerId, amt);
+                    break;
+                case 5:
+                    System.out.println("Enter Amount to add to wallet : ");
+                    double amt2 =  scanner.nextDouble();
+                    customerService.deductFromWallet(customerId, amt2);
+                    break;
+                case 6:
+                    System.out.print("Enter new username: ");
+                    String username = scanner.nextLine();
+
+                    System.out.print("Enter new email: ");
+                    String email = scanner.nextLine();
+
+                    System.out.print("Enter new wallet balance: ");
+                    double walletBalance = scanner.nextDouble();
+                    scanner.nextLine();  // Consume newline
+                    Customer existingCustomer = customerService.getCustomerById(customerId);
+                    List<Subscription> currentSubscriptions = customerService.getSubscriptionsByCustomerId(customerId);
+                    Customer customer = new Customer();
+                    customer.setId(customerId);
+                    customer.setName(username);
+                    customer.setEmail(email);
+                    customer.setWalletBalance(walletBalance);
+                    customer.setSubscriptions(currentSubscriptions);
+                    customerService.updateCustomer(customer);
+                    break;
+                case 7:
+                    customerService.deleteCustomer(customerId);
+                    break;
+                case 8:
                     System.out.println("Logging out...");
                     return;
+
+                case 9:
+
                 default:
                     System.out.println("Invalid option, please try again.");
             }

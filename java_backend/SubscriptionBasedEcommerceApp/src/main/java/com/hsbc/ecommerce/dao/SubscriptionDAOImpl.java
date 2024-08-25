@@ -65,10 +65,51 @@ public class SubscriptionDAOImpl implements SubscriptionDAO {
         }
     }
 
+//    @Override
+//    public List<Subscription> getSubscriptionsByCustomerId(int customerId) {
+//        // Check if the customer exists
+//        String checkCustomerSql = "SELECT 1 FROM users WHERE user_id = ?";
+//        try (PreparedStatement checkCustomerStmt = connection.prepareStatement(checkCustomerSql)) {
+//            checkCustomerStmt.setInt(1, customerId);
+//            ResultSet rs = checkCustomerStmt.executeQuery();
+//            if (!rs.next()) {
+//                throw new CustomerNotFoundException("Customer with ID " + customerId + " does not exist.");
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//            throw new RuntimeException(e); // Wrap SQL exceptions in a runtime exception
+//        } catch (CustomerNotFoundException e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//        // Fetch subscriptions if the customer exists
+//        List<Subscription> subscriptions = new ArrayList<>();
+//        String sql = "SELECT * FROM Subscriptions WHERE user_id = ?";
+//        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+//            ps.setInt(1, customerId);
+//            try (ResultSet rs = ps.executeQuery()) {
+//                while (rs.next()) {
+//                    Subscription subscription = new Subscription(
+//                            rs.getInt("id"),
+//                            rs.getInt("user_id"),
+//                            rs.getString("type"),
+//                            rs.getDate("start_date"),
+//                            rs.getDate("end_date"),
+//                            rs.getBoolean("active")
+//                    );
+//                    subscriptions.add(subscription);
+//                }
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return subscriptions;
+//    }
+
     @Override
     public List<Subscription> getSubscriptionsByCustomerId(int customerId) {
         // Check if the customer exists
-        String checkCustomerSql = "SELECT 1 FROM Customers WHERE id = ?";
+        String checkCustomerSql = "SELECT 1 FROM users WHERE user_id = ?";
         try (PreparedStatement checkCustomerStmt = connection.prepareStatement(checkCustomerSql)) {
             checkCustomerStmt.setInt(1, customerId);
             ResultSet rs = checkCustomerStmt.executeQuery();
@@ -84,19 +125,18 @@ public class SubscriptionDAOImpl implements SubscriptionDAO {
 
         // Fetch subscriptions if the customer exists
         List<Subscription> subscriptions = new ArrayList<>();
-        String sql = "SELECT * FROM Subscriptions WHERE user_id = ?";
+        String sql = "SELECT user_id, subscription_id, start_date, next_delivery_date, status FROM Customer_Subscriptions WHERE user_id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, customerId);
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
-                    Subscription subscription = new Subscription(
-                            rs.getInt("id"),
-                            rs.getInt("user_id"),
-                            rs.getString("type"),
-                            rs.getDate("start_date"),
-                            rs.getDate("end_date"),
-                            rs.getBoolean("active")
-                    );
+                    // Create Subscription object and set its properties
+                    Subscription subscription = new Subscription();
+                    subscription.setId(rs.getInt("subscription_id")); // Map subscription_id to id
+                    subscription.setUserId(rs.getInt("user_id")); // Map user_id to userId
+                    subscription.setStartDate(rs.getDate("start_date")); // Map start_date to startDate
+                    subscription.setEndDate(rs.getDate("next_delivery_date")); // Map next_delivery_date to endDate
+                    subscription.setActive("ACTIVE".equals(rs.getString("status"))); // Map status to active
                     subscriptions.add(subscription);
                 }
             }
@@ -105,6 +145,7 @@ public class SubscriptionDAOImpl implements SubscriptionDAO {
         }
         return subscriptions;
     }
+
 
     @Override
     public void updateSubscription(Subscription subscription) throws SubscriptionNotFoundException {

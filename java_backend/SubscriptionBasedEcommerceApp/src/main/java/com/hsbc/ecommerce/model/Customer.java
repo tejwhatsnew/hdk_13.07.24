@@ -10,6 +10,9 @@ public class Customer {
     private List<Subscription> subscriptions;
 
     // Constructor
+
+    public Customer(){}
+
     public Customer(int id, String name, String email, double walletBalance, List<Subscription> subscriptions) {
         this.id = id;
         this.name = name;

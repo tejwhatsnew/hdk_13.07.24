@@ -16,7 +16,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public void addCustomer(Customer customer) {
-        String sql = "INSERT INTO Customers (name, email, wallet_balance) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO users (username, email, wallet_balance) VALUES (?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, customer.getName());
             stmt.setString(2, customer.getEmail());
@@ -41,7 +41,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public Customer getCustomerById(int customerId) throws CustomerNotFoundException {
-        String sql = "SELECT * FROM Customers WHERE id = ?";
+        String sql = "SELECT * FROM users WHERE user_id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, customerId);
             ResultSet rs = ps.executeQuery();
@@ -59,7 +59,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public List<Customer> getAllCustomers() {
-        String sql = "SELECT * FROM Customers";
+        String sql = "SELECT * FROM users";
         List<Customer> customers = new ArrayList<>();
         try (Statement statement = connection.createStatement();
              ResultSet rs = statement.executeQuery(sql)) {
@@ -75,7 +75,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public void updateCustomer(Customer customer) throws CustomerNotFoundException{
-        String sql = "UPDATE Customers SET name = ?, email = ?, wallet_balance = ? WHERE id = ?";
+        String sql = "UPDATE users SET username = ?, email = ?, wallet_balance = ? WHERE user_id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, customer.getName());
             ps.setString(2, customer.getEmail());
@@ -93,7 +93,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public void deleteCustomer(int customerId) throws CustomerNotFoundException{
-        String sql = "DELETE FROM Customers WHERE id = ?";
+        String sql = "DELETE FROM users WHERE user_id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, customerId);
             int rowsDeleted = ps.executeUpdate();
@@ -107,7 +107,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public void topUpWallet(int customerId, double amount) throws CustomerNotFoundException{
-        String sql = "UPDATE Customers SET wallet_balance = wallet_balance + ? WHERE id = ?";
+        String sql = "UPDATE users SET wallet_balance = wallet_balance + ? WHERE user_id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setDouble(1, amount);
             ps.setInt(2, customerId);
@@ -123,7 +123,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public void deductFromWallet(int customerId, double amount) throws CustomerNotFoundException{
-        String sql = "UPDATE Customers SET wallet_balance = wallet_balance - ? WHERE id = ?";
+        String sql = "UPDATE users SET wallet_balance = wallet_balance - ? WHERE user_id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setDouble(1, amount);
             ps.setInt(2, customerId);
@@ -141,7 +141,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     public List<Subscription> getSubscriptionsByCustomerId(int customerId) throws CustomerNotFoundException{
 
         // Check if the customer exists
-        String checkCustomerSql = "SELECT 1 FROM Customers WHERE id = ?";
+        String checkCustomerSql = "SELECT 1 FROM users WHERE user_id = ?";
         try (PreparedStatement checkCustomerStmt = connection.prepareStatement(checkCustomerSql)) {
             checkCustomerStmt.setInt(1, customerId);
             ResultSet rs = checkCustomerStmt.executeQuery();
@@ -180,8 +180,8 @@ public class CustomerDAOImpl implements CustomerDAO {
     // Utility method to map ResultSet to Customer object
     private Customer mapCustomer(ResultSet rs) throws SQLException {
         Customer customer = new Customer(
-                rs.getInt("id"),
-                rs.getString("name"),
+                rs.getInt("user_id"),
+                rs.getString("username"),
                 rs.getString("email"),
                 rs.getDouble("wallet_balance"),
                 null  // Subscriptions can be fetched separately if needed
